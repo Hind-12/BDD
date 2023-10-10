@@ -17,7 +17,7 @@ int main() {
         printf("1. Ajouter un contact\n");
         printf("2. Supprimer un contact\n");
         printf("3. Afficher tous les contacts\n");
-        printf("4. Mettre à jour un contact\n");
+        printf("4. Mettre a jour un contact\n");
         printf("5. Quitter\n");
         printf("Choisissez une option : ");
         scanf_s("%d", &choix);
