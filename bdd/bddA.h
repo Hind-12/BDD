@@ -10,6 +10,8 @@ struct Contact
 void ajouterContact(struct Contact contacts[], int* nbContacts);
 void afficherContacts(struct Contact contacts[], int nbContacts);
 void supprimerContact(struct Contact contacts[], int* nbContacts);
+void mettreAJourContact(struct Contact contacts[], int nbContacts);
+
 
 #endif BDDA_H
 
