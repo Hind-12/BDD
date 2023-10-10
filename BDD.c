@@ -15,7 +15,7 @@ int main() {
         // Affichage du menu
         printf("Menu :\n");
         printf("1. Ajouter un contact\n");
-        printf("2. Supprimer un contact\n"); // Assurez-vous que cette ligne est correcte
+        printf("2. Supprimer un contact\n");
         printf("3. Afficher tous les contacts\n");
         printf("4. Quitter\n");
         printf("Choisissez une option : ");

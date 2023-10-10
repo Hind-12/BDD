@@ -15,9 +15,9 @@ void ajouterContact(struct Contact contacts[], int* nbContacts) {
     if (*nbContacts < 100) {
         struct Contact nouveauContact;
         printf("Entrez le nom : ");
-        scanf_s("%s", nouveauContact.nom, sizeof(nouveauContact.numero));
+        scanf_s("%s", nouveauContact.nom, sizeof(nouveauContact.nom));
         printf("Entrez le prénom : ");
-        scanf_s("%s", nouveauContact.prenom, sizeof(nouveauContact.numero));
+        scanf_s("%s", nouveauContact.prenom, sizeof(nouveauContact.prenom));
         printf("Entrez le numéro de téléphone : ");
         scanf_s("%s", nouveauContact.numero, sizeof(nouveauContact.numero));
 
