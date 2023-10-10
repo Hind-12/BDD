@@ -38,13 +38,10 @@ int main() {
         case 5:
             printf("Au revoir !\n");
             break;
-        case 6:
-            printf("TEST !\n");
-            break;
         default:
             printf("Option invalide. Réessayez.\n");
         }
-    } while (choix != 6);
+    } while (choix != 5);
 
     return 0;
 }
