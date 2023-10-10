@@ -17,7 +17,8 @@ int main() {
         printf("1. Ajouter un contact\n");
         printf("2. Supprimer un contact\n");
         printf("3. Afficher tous les contacts\n");
-        printf("4. Quitter\n");
+        printf("4. Mettre à jour un contact\n");
+        printf("5. Quitter\n");
         printf("Choisissez une option : ");
         scanf_s("%d", &choix);
 
@@ -32,12 +33,15 @@ int main() {
             afficherContacts(contacts, nbContacts);
             break;
         case 4:
+            mettreAJourContact(contacts, nbContacts);
+            break;
+        case 5:
             printf("Au revoir !\n");
             break;
         default:
             printf("Option invalide. Réessayez.\n");
         }
-    } while (choix != 4);
+    } while (choix != 5);
 
     return 0;
 }

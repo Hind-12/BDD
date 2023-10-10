@@ -76,3 +76,39 @@ void supprimerContact(struct Contact contacts[], int* nbContacts) {
 }
 
 
+// Fonction pour mettre à jour un contact dans la base de données
+void mettreAJourContact(struct Contact contacts[], int nbContacts) {
+    char nomAMettreAJour[50];
+    char prenomAMettreAJour[50];
+
+    printf("Entrez le nom du contact à mettre à jour : ");
+    scanf_s("%s", nomAMettreAJour, sizeof(nomAMettreAJour));
+    printf("Entrez le prénom du contact à mettre à jour : ");
+    scanf_s("%s", prenomAMettreAJour, sizeof(prenomAMettreAJour));
+
+    int indexAMettreAJour = -1;
+
+    // Recherche du contact à mettre à jour dans la base de données
+    for (int i = 0; i < nbContacts; i++) {
+        if (strcmp(contacts[i].nom, nomAMettreAJour) == 0 && strcmp(contacts[i].prenom, prenomAMettreAJour) == 0) {
+            indexAMettreAJour = i;
+            break;
+        }
+    }
+
+    if (indexAMettreAJour != -1) {
+        // Demandez le nouveau numéro de téléphone
+        printf("Entrez le nouveau numéro de téléphone : ");
+        scanf_s("%s", contacts[indexAMettreAJour].numero, sizeof(contacts[indexAMettreAJour].numero));
+        printf("Contact mis à jour avec succès.\n");
+    }
+    else {
+        printf("Le contact n'a pas été trouvé dans la base de données.\n");
+    }
+}
+
+
+// deux fonction update,
+// FAIRE EN SORT COMME SI IL Y A DEUX BASE DE  DONNéES : genre deux liste liste 1; BDD1 et liste2;BDD2.
+// on fait des droit pour rentrer ou pas dans une base de donnée. 
+
