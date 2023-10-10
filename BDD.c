@@ -12,7 +12,7 @@ int main() {
     int choix;
 
     do {
-        // Affichage du menu
+        // Affichage du menu XXX
         printf("Menu :\n");
         printf("1. Ajouter un contact\n");
         printf("2. Supprimer un contact\n");
@@ -38,10 +38,13 @@ int main() {
         case 5:
             printf("Au revoir !\n");
             break;
+        case 6:
+            printf("TEST !\n");
+            break;
         default:
             printf("Option invalide. Réessayez.\n");
         }
-    } while (choix != 5);
+    } while (choix != 6);
 
     return 0;
 }
