@@ -1,5 +1,8 @@
 #ifndef BDDA_H
 #define BDD_H
+#define DROIT_COMPLET 1
+#define DROIT_LIMITÉ 2
+#define AUCUN_DROIT 0
 
 struct Contact
 {

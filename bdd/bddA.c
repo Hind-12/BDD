@@ -10,26 +10,28 @@ struct Contact {
     char numero[15];
 };
 
+
 // Fonction pour ajouter un contact à la base de données
 void ajouterContact(struct Contact contacts[], int* nbContacts) {
-    if (*nbContacts < 100) {
-        struct Contact nouveauContact;
-        printf("Entrez le nom : ");
-        scanf_s("%s", nouveauContact.nom, sizeof(nouveauContact.nom));
-        printf("Entrez le prénom : ");
-        scanf_s("%s", nouveauContact.prenom, sizeof(nouveauContact.prenom));
-        printf("Entrez le numéro de téléphone : ");
-        scanf_s("%s", nouveauContact.numero, sizeof(nouveauContact.numero));
+        if (*nbContacts < 100) {
+            struct Contact nouveauContact;
+            printf("Entrez le nom : ");
+            scanf_s("%s", nouveauContact.nom, sizeof(nouveauContact.nom));
+            printf("Entrez le prénom : ");
+            scanf_s("%s", nouveauContact.prenom, sizeof(nouveauContact.prenom));
+            printf("Entrez le numéro de téléphone : ");
+            scanf_s("%s", nouveauContact.numero, sizeof(nouveauContact.numero));
 
-        contacts[*nbContacts] = nouveauContact;
-        (*nbContacts)++;
+            contacts[*nbContacts] = nouveauContact;
+            (*nbContacts)++;
 
-        printf("Contact ajouté avec succès.\n");
-    }
-    else {
-        printf("La base de données est pleine. Supprimez des contacts pour en ajouter de nouveaux.\n");
+            printf("Contact ajouté avec succès.\n");
+        }
+        else {
+            printf("La base de données est pleine. Supprimez des contacts pour en ajouter de nouveaux.\n");
     }
 }
+
 
 // Fonction pour afficher tous les contacts
 void afficherContacts(struct Contact contacts[], int nbContacts) {
@@ -41,6 +43,7 @@ void afficherContacts(struct Contact contacts[], int nbContacts) {
         printf("----------------------\n");
     }
 }
+
 
 // Fonction pour supprimer un contact de la base de données
 void supprimerContact(struct Contact contacts[], int* nbContacts) {
@@ -74,6 +77,7 @@ void supprimerContact(struct Contact contacts[], int* nbContacts) {
         printf("Le contact n'a pas été trouvé dans la base de données.\n");
     }
 }
+
 
 
 // Fonction pour mettre à jour un contact dans la base de données
@@ -111,4 +115,5 @@ void mettreAJourContact(struct Contact contacts[], int nbContacts) {
 // deux fonction update,
 // FAIRE EN SORT COMME SI IL Y A DEUX BASE DE  DONNéES : genre deux liste liste 1; BDD1 et liste2;BDD2.
 // on fait des droit pour rentrer ou pas dans une base de donnée. 
+// organisation logique: 1. les droit( 3 sont droit complet, meduim, zero).      2.essayer de mettre une deuxieme couche de choisir le type de base de donnée (bddA, bddB). 
 
