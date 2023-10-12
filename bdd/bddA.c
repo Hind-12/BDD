@@ -10,24 +10,29 @@ struct Contact {
     char numero[15];
 };
 
+
+/*void createTable(char tableName) {
+
+}*/
+
 // Fonction pour ajouter un contact à la base de données
 void ajouterContact(struct Contact contacts[], int* nbContacts) {
     if (*nbContacts < 100) {
         struct Contact nouveauContact;
         printf("Entrez le nom : ");
         scanf_s("%s", nouveauContact.nom, sizeof(nouveauContact.nom));
-        printf("Entrez le prénom : ");
+        printf("Entrez le prenom : ");
         scanf_s("%s", nouveauContact.prenom, sizeof(nouveauContact.prenom));
-        printf("Entrez le numéro de téléphone : ");
+        printf("Entrez le numéro de telephone : ");
         scanf_s("%s", nouveauContact.numero, sizeof(nouveauContact.numero));
 
         contacts[*nbContacts] = nouveauContact;
         (*nbContacts)++;
 
-        printf("Contact ajouté avec succès.\n");
+        printf("Contact ajoute avec succes.\n");
     }
     else {
-        printf("La base de données est pleine. Supprimez des contacts pour en ajouter de nouveaux.\n");
+        printf("La base de donnees est pleine. Supprimez des contacts pour en ajouter de nouveaux.\n");
     }
 }
 
@@ -36,75 +41,75 @@ void afficherContacts(struct Contact contacts[], int nbContacts) {
     printf("Liste des contacts :\n");
     for (int i = 0; i < nbContacts; i++) {
         printf("Nom : %s\n", contacts[i].nom);
-        printf("Prénom : %s\n", contacts[i].prenom);
-        printf("Numéro de téléphone : %s\n", contacts[i].numero);
+        printf("Prenom : %s\n", contacts[i].prenom);
+        printf("Numero de telephone : %s\n", contacts[i].numero);
         printf("----------------------\n");
     }
 }
 
 // Fonction pour supprimer un contact de la base de données
 void supprimerContact(struct Contact contacts[], int* nbContacts) {
-    char nomASupprimer[50];
-    char prenomASupprimer[50];
+    char numDel[50];
 
-    printf("Entrez le nom du contact à supprimer : ");
-    scanf_s("%s", nomASupprimer, sizeof(nomASupprimer));
-    printf("Entrez le prénom du contact à supprimer : ");
-    scanf_s("%s", prenomASupprimer, sizeof(prenomASupprimer));
+    printf("Entrez le numero du contact a supprimer : ");
+    scanf_s("%s", numDel, sizeof(numDel));
 
-    int indexASupprimer = -1;
+    int index = -1;
 
     // Recherche du contact à supprimer dans la base de données
     for (int i = 0; i < *nbContacts; i++) {
-        if (strcmp(contacts[i].nom, nomASupprimer) == 0 && strcmp(contacts[i].prenom, prenomASupprimer) == 0) {
-            indexASupprimer = i;
+        if (strcmp(contacts[i].numero, numDel) == 0) {
+            index = i;
             break;
         }
     }
 
-    if (indexASupprimer != -1) {
+    if (index != -1) {
         // Déplacer les contacts suivants vers l'arrière pour remplir l'emplacement supprimé
-        for (int i = indexASupprimer; i < *nbContacts - 1; i++) {
+        for (int i = index; i < *nbContacts - 1; i++) {
             contacts[i] = contacts[i + 1];
         }
         (*nbContacts)--;
-        printf("Contact supprimé avec succès.\n");
+        printf("Contact supprime avec succes.\n");
     }
     else {
-        printf("Le contact n'a pas été trouvé dans la base de données.\n");
+        printf("Contact introuvable dans la base de donnees.\n");
     }
 }
 
 
 // Fonction pour mettre à jour un contact dans la base de données
 void mettreAJourContact(struct Contact contacts[], int nbContacts) {
-    char nomAMettreAJour[50];
-    char prenomAMettreAJour[50];
+    char numUpdated[50];
 
-    printf("Entrez le nom du contact à mettre à jour : ");
-    scanf_s("%s", nomAMettreAJour, sizeof(nomAMettreAJour));
-    printf("Entrez le prénom du contact à mettre à jour : ");
-    scanf_s("%s", prenomAMettreAJour, sizeof(prenomAMettreAJour));
+    printf("Entrez le numero du contact a mettre a jour : ");
+    scanf_s("%s", numUpdated, sizeof(numUpdated));
 
-    int indexAMettreAJour = -1;
+    int index = -1;
 
     // Recherche du contact à mettre à jour dans la base de données
     for (int i = 0; i < nbContacts; i++) {
-        if (strcmp(contacts[i].nom, nomAMettreAJour) == 0 && strcmp(contacts[i].prenom, prenomAMettreAJour) == 0) {
-            indexAMettreAJour = i;
+        if (strcmp(contacts[i].numero, numUpdated) == 0) {
+            index = i;
             break;
         }
     }
 
-    if (indexAMettreAJour != -1) {
+    if (index != -1) {
         // Demandez le nouveau numéro de téléphone
-        printf("Entrez le nouveau numéro de téléphone : ");
-        scanf_s("%s", contacts[indexAMettreAJour].numero, sizeof(contacts[indexAMettreAJour].numero));
-        printf("Contact mis à jour avec succès.\n");
+        printf("Entrez le nouveau  nom : ");
+        scanf_s("%s", contacts[index].nom, sizeof(contacts[index].nom));
+        printf("Entrez le nouveau prenom : ");
+        scanf_s("%s", contacts[index].prenom, sizeof(contacts[index].prenom));
+        printf("Contact mis a jour avec succes.\n");
     }
     else {
-        printf("Le contact n'a pas été trouvé dans la base de données.\n");
+        printf("Le contact n'a pas ete trouve dans la base de donnees.\n");
     }
+
+   /*
+   
+    */ 
 }
 
 

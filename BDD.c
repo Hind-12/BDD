@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
-
+#include <ctype.h>
 #include "bdd/bddA.h"
 
 
@@ -22,24 +22,29 @@ int main() {
         printf("Choisissez une option : ");
         scanf_s("%d", &choix);
 
-        switch (choix) {
-        case 1:
-            ajouterContact(contacts, &nbContacts);
-            break;
-        case 2:
-            supprimerContact(contacts, &nbContacts);
-            break;
-        case 3:
-            afficherContacts(contacts, nbContacts);
-            break;
-        case 4:
-            mettreAJourContact(contacts, nbContacts);
-            break;
-        case 5:
-            printf("Au revoir !\n");
-            break;
-        default:
-            printf("Option invalide. Réessayez.\n");
+
+        if (choix < 1 || choix > 5 || isalpha(choix)) {
+            printf("Merci de saisir une valeur du menu comprise entre 1 et 5\n");
+        }else {
+            switch (choix) {
+            case 1:
+                ajouterContact(contacts, &nbContacts);
+                break;
+            case 2:
+                supprimerContact(contacts, &nbContacts);
+                break;
+            case 3:
+                afficherContacts(contacts, nbContacts);
+                break;
+            case 4:
+                mettreAJourContact(contacts, nbContacts);
+                break;
+            case 5:
+                printf("Au revoir !\n");
+                break;
+            default:
+                printf("Option invalide. Ressayez.\n");
+            }
         }
     } while (choix != 5);
 
